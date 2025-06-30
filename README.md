@@ -24,10 +24,6 @@ Patrones de Diseño:
 ### Backend
 
 1. Configurar la cadena de conexión a Azure SQL en appsettings.json:
-```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=...;Database=...;User Id=...;Password=...;"
-}
 2. Ejecutar migraciones
 dotnet ef database update
 3. Ejecutar la aplicacion
