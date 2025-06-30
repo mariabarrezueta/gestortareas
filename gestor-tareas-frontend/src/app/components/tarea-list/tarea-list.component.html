@@ -1,0 +1,33 @@
+<h2>Lista de Tareas</h2>
+
+<label for="filtro">Filtrar por estado:</label>
+<select id="filtro" [(ngModel)]="filtro">
+  <option value="todas">Todas</option>
+  <option value="completadas">Completadas</option>
+  <option value="pendientes">Pendientes</option>
+</select>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Fecha límite</th>
+    <th>Completada</th>
+    <th>Prioridad</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let tarea of tareasFiltradas">
+    <td>{{ tarea.titulo }}</td>
+    <td>{{ tarea.fechaLimite | date }}</td>
+    <td>{{ tarea.completada ? 'Sí' : 'No' }}</td>
+    <td>{{ tarea.prioridad }}</td>
+    <td>
+      <button *ngIf="!tarea.completada" (click)="marcarComoCompletada(tarea)">
+        Marcar como completada
+      </button>
+    </td>
+  </tr>
+</table>
+
+

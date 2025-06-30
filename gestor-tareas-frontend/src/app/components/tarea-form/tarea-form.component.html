@@ -1,0 +1,38 @@
+<h2>Nueva Tarea</h2>
+<form (ngSubmit)="crearTarea()" #tareaForm="ngForm">
+  <label>
+    Título:
+    <input type="text" [(ngModel)]="tarea.titulo" name="titulo" required>
+  </label><br><br>
+
+  <label>
+    Descripción:
+    <textarea [(ngModel)]="tarea.descripcion" name="descripcion"></textarea>
+  </label><br><br>
+
+  <label>
+    Fecha límite:
+    <input type="date" [(ngModel)]="tarea.fechaLimite" name="fechaLimite" required>
+  </label><br><br>
+
+  <label>
+    Completada:
+    <input type="checkbox" [(ngModel)]="tarea.completada" name="completada">
+  </label><br><br>
+
+  <label>
+    Prioridad:
+    <select [(ngModel)]="tarea.prioridad" name="prioridad" required>
+      <option [value]="0">Baja</option>
+      <option [value]="1">Media</option>
+      <option [value]="2">Alta</option>
+    </select>
+  </label><br><br>
+
+  <label>
+    Categoría:
+    <input type="text" [(ngModel)]="tarea.categoria" name="categoria">
+  </label><br><br>
+
+  <button type="submit">Guardar</button>
+</form>

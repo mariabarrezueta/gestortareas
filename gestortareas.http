@@ -1,0 +1,6 @@
+@gestortareas_HostAddress = http://localhost:5128
+
+GET {{gestortareas_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
